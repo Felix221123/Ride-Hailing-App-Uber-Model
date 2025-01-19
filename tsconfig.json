@@ -1,0 +1,28 @@
+{
+   "compilerOptions": {
+      "lib": [
+         "es5",
+         "es6"
+      ],
+      "target": "es5",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "outDir": "./dist",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "sourceMap": true,
+      "baseUrl": "./",
+      "typeRoots": [
+      "./node_modules/@types",
+      "./types" // Ensure your custom types are recognized
+      ],
+      "paths": {
+      "*": ["node_modules/*", "src/*"] // Adjust according to your project structure
+      }
+   },
+   "ts-node": {
+      "files": true,
+      "transpileOnly": true
+   },
+   "exclude": ["./coverage", "./dist", "__tests__", "jest.config.js"]
+}
