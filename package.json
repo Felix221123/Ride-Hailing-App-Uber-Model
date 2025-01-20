@@ -4,7 +4,7 @@
    "description": "Awesome project developed with TypeORM, POSTRGRESQL and NodeJS",
    "type": "commonjs",
    "scripts": {
-      "start": "nodemon",
+      "server": "nodemon",
       "typeorm": "typeorm-ts-node-commonjs",
       "lint:fix": "eslint src/**/*.ts --fix",
       "build": "tsc --out dist",

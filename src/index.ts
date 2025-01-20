@@ -1,9 +1,11 @@
+import 'dotenv/config'
 import * as express from "express"
 import * as bodyParser from "body-parser"
 import { Request, Response, NextFunction } from "express"
 import { AppDataSource } from "./data-source"
 import { Routes } from "./routes"
 import { User } from "./entity/User"
+import config from './config/config'
 
 AppDataSource.initialize().then(async () => {
 
@@ -27,8 +29,13 @@ AppDataSource.initialize().then(async () => {
     // setup express app here
     // ...
 
-    // start express server
-    app.listen(3000)
+    // defining the port
+    const port = config.server.port
+
+    // using the listen callback func to log out port definition
+    app.listen(port, () => {
+        console.log(`app is running at http://localhost:${port}`)
+    })
 
     // insert new users for test
     await AppDataSource.manager.save(
@@ -47,6 +54,6 @@ AppDataSource.initialize().then(async () => {
         })
     )
 
-    console.log("Express server has started on port 3000. Open http://localhost:3000/users to see results")
+    console.log("Express server has started on port 5500. Open http://localhost:5500/users to see results")
 
 }).catch(error => console.log(error))
