@@ -1,7 +1,16 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
-import { User } from "./entity/User"
-import config from "./config/config"
+import config from "./config/config.ts"
+import { User } from "./entity/User.ts"
+import { Admin } from "./entity/Admin.ts"
+import { Driver } from "./entity/Driver.ts"
+import { Customer } from "./entity/Customer.ts"
+import { Ride } from "./entity/Ride.ts"
+import { Payment } from "./entity/Payment.ts"
+import { Vehicle } from "./entity/Vehicle.ts"
+
+
+
 
 export const AppDataSource = new DataSource({
     type: "postgres",
@@ -10,9 +19,11 @@ export const AppDataSource = new DataSource({
     username: config.server.databaseConfig.user,
     password: config.server.databaseConfig.password,
     database: config.server.databaseConfig.database,
-    synchronize: true,
+    synchronize: false,
     logging: false,
-    entities: [User],
-    migrations: [],
+    entities: [User , Admin , Driver , Customer , Ride , Payment , Vehicle],
+    migrations: ["src/migration/**/*.ts"],
     subscribers: [],
-})
+});
+
+

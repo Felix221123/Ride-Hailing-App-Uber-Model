@@ -1,28 +1,33 @@
 {
    "compilerOptions": {
-      "lib": [
-         "es5",
-         "es6"
-      ],
-      "target": "es5",
-      "module": "commonjs",
-      "moduleResolution": "node",
-      "outDir": "./dist",
-      "emitDecoratorMetadata": true,
-      "experimentalDecorators": true,
-      "sourceMap": true,
-      "baseUrl": "./",
-      "typeRoots": [
-      "./node_modules/@types",
-      "./types" // Ensure your custom types are recognized
-      ],
-      "paths": {
-      "*": ["node_modules/*", "src/*"] // Adjust according to your project structure
-      }
+     "lib": ["ESNext"],
+     "target": "ESNext",
+     "module": "NodeNext",
+     "moduleResolution": "NodeNext",
+     "outDir": "./dist",
+     "allowImportingTsExtensions": true,
+     "noEmit": true,
+     "emitDecoratorMetadata": true,
+     "experimentalDecorators": true,
+     "skipLibCheck": true,
+     "forceConsistentCasingInFileNames": true,
+     "strictPropertyInitialization": false,
+     "strict": true,
+     "esModuleInterop": true,
+     "resolveJsonModule": true,
+     "sourceMap": true,
+     "baseUrl": "./",
+     "typeRoots": ["./node_modules/@types"],
+     "paths": {
+       "*": ["node_modules/*", "src/*"]
+     }
    },
    "ts-node": {
-      "files": true,
-      "transpileOnly": true
+     "files": true,
+     "transpileOnly": true,
+     "esm": true,
+     "experimentalSpecifierResolution": "node"
    },
-   "exclude": ["./coverage", "./dist", "__tests__", "jest.config.js"]
+   "exclude": ["./coverage", "./dist", "__tests__", "jest.config.js", "node_modules"]
 }
+ 
