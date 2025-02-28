@@ -1,6 +1,5 @@
 import 'dotenv/config'
 import express from "express"
-import * as bodyParser from "body-parser"
 import { Request, Response, NextFunction } from "express"
 import { AppDataSource } from "./data-source.ts"
 import { Routes } from "./routes.ts"
@@ -10,7 +9,8 @@ AppDataSource.initialize().then(async () => {
 
     // create express app
     const app = express()
-    app.use(bodyParser.json())
+    app.use(express.json())
+
 
     // register express routes from defined application routes
     Routes.forEach(route => {
@@ -36,6 +36,5 @@ AppDataSource.initialize().then(async () => {
         console.log(`app is running at http://localhost:${port}`)
     })
 
-    console.log("Express server has started on port 5500. Open http://localhost:5500/users to see results")
-
+    
 }).catch(error => console.log(error))

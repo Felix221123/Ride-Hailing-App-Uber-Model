@@ -1,10 +1,10 @@
+import { Customer } from './../entity/Customer.ts';
 import { AppDataSource } from "../data-source.ts"
 import { NextFunction, Request, Response } from "express"
-import { User } from "../entity/User.ts"
 
-export class UserController {
+export class CustomerController {
 
-    private userRepository = AppDataSource.getRepository(User)
+    private userRepository = AppDataSource.getRepository(Customer)
 
     async all(_request: Request, _response: Response, _next: NextFunction) {
         return this.userRepository.find()
