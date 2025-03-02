@@ -6,6 +6,6 @@ import { User } from "./User.ts"
 export class Admin extends User{
 
     // column for admin permissions 
-    @Column()
+    @Column({ default: "[]" })
     permissions!: string
 }

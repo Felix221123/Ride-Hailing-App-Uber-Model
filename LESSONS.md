@@ -21,3 +21,10 @@
 ```bash
    npx typeorm-ts-node-esm schema:log -d ./src/data-source.ts 
    ```
+
+
+
+   if you are updating the existing migrations for your application, use the cmd, 
+```bash
+   npx typeorm-ts-node-esm migration:generate -d ./src/data-source.ts src/migration/<migrationName>
+   ```

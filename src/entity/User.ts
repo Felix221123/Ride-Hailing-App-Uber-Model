@@ -1,6 +1,7 @@
-import { Entity, PrimaryGeneratedColumn, Column,CreateDateColumn } from "typeorm"
+import { Entity, PrimaryGeneratedColumn,TableInheritance, Column,CreateDateColumn } from "typeorm"
 
 @Entity()
+@TableInheritance({ column: { type: "varchar", name: "role" } })
 export abstract class User {
 
     // PrimaryGeneratedColumn for users id, using uuid to generate unique id
@@ -16,7 +17,7 @@ export abstract class User {
     lastName: string
 
     // users email
-    @Column()
+    @Column({ nullable: true })
     emailAddress: string
 
     // users password
@@ -38,6 +39,10 @@ export abstract class User {
     // users status
     @Column()
     status: string
+
+    // sessionToken management
+    @Column({ type: "uuid", default: () => "uuid_generate_v4()", nullable: true })
+    sessionToken: string
 
 
 }

@@ -14,16 +14,27 @@ AppDataSource.initialize().then(async () => {
 
     // register express routes from defined application routes
     Routes.forEach(route => {
-        (app as any)[route.method](route.route, (req: Request, res: Response, next: NextFunction) => {
-            const result = (new (route.controller as any))[route.action](req, res, next)
-            if (result instanceof Promise) {
-                result.then(result => result !== null && result !== undefined ? res.send(result) : undefined)
+        (app as any)[route.method](route.route, async (req: Request, res: Response, next: NextFunction) => {
+            try {
+                const controllerInstance = new (route.controller as any)();
+                const result = await controllerInstance[route.action](req, res, next);
 
-            } else if (result !== null && result !== undefined) {
-                res.json(result)
+                // Only send a response if the controller doesn't handle it
+                if (result !== undefined && result !== null && !res.headersSent) {
+                    res.json(result);
+                }
+            } catch (error) {
+                console.error("Error processing request:", error);
+                const err = error as Error; // Type assertion
+                console.error("Error processing request:", err.message);
+                if (!res.headersSent) {
+                    res.status(500).json({ message: "Internal server error", error: err.message });
+                }
             }
-        })
-    })
+        });
+    });
+
+
 
     // setup express app here
     // ...
@@ -36,5 +47,5 @@ AppDataSource.initialize().then(async () => {
         console.log(`app is running at http://localhost:${port}`)
     })
 
-    
+
 }).catch(error => console.log(error))
