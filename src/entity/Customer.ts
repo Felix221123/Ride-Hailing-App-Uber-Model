@@ -1,10 +1,9 @@
-import { Entity, Column }  from "typeorm"
-import { User } from "./User.ts"
+import { ChildEntity, Column }  from "typeorm"
+import { User } from "./User.js"
 
 
 
-@Entity()
-
+@ChildEntity()
 // Customer class inherits from the User class
 export class Customer extends User {
 

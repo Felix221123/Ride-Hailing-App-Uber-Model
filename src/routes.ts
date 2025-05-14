@@ -1,6 +1,8 @@
-import { CustomerController } from "./controller/CustomerController.ts"
-import { AuthController } from "./controller/AuthController.ts"
-
+import { CustomerController } from "./controller/CustomerController.js"
+import { AuthController } from "./controller/AuthController.js"
+import { DriverController } from "./controller/DriverController.js"
+import { AdminController } from "./controller/AdminController.js"
+import { VehicleController } from "./controller/VehicleController.js"
 
 // list of all routes
 export const Routes = [
@@ -12,8 +14,39 @@ export const Routes = [
     },
     {
         method: "get",
-        route: "/customer",
+        route: "/customers",
         controller: CustomerController,
-        action: "all"
+        action: "all_customers"
+    },
+    {
+        method: "get",
+        route: "/drivers",
+        controller: DriverController,
+        action: "all_drivers"
+    },
+    {
+        method: "get",
+        route: "/admins",
+        controller: AdminController,
+        action: "all_admins"
+    },
+    {
+        method: "post",
+        route: "/login",
+        controller: AuthController,
+        action: "login"
+    },
+    {
+        method: "post",
+        route: "/vehicle/registerOrUpdate",
+        controller: VehicleController,
+        action: "registerOrUpdateVehicle"
+    },
+    {
+        method: "get",
+        route: "/vehicle/:driverId",
+        controller: VehicleController,
+        action: "getVehicleByDriver"
     }
+
 ]

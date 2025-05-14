@@ -1,11 +1,12 @@
-import { Entity , Column} from "typeorm"
-import { User } from "./User.ts"
+import { ChildEntity , Column} from "typeorm"
+import { User } from "./User.js"
 
-@Entity()
+@ChildEntity()
 // admin class inherits from the User class
 export class Admin extends User{
 
     // column for admin permissions 
-    @Column({ default: "[]" })
-    permissions!: string
+    @Column("text", { array: true, default: () => "'{}'" })
+    permissions: string[];
+
 }

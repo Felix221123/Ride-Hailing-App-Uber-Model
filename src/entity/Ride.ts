@@ -1,6 +1,6 @@
 import { Entity , Column, PrimaryGeneratedColumn,ManyToOne, JoinColumn,CreateDateColumn }  from "typeorm"
-import { User } from "./User.ts"
-import { Driver } from "./Driver.ts"
+import { User } from "./User.js"
+import { Driver } from "./Driver.js"
 
 
 @Entity()

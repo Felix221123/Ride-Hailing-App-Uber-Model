@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import env from "../utils/validateEnv.ts"
+import env from "../utils/validateEnv.js"
 
 
 // defining env variables here

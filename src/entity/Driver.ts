@@ -1,14 +1,9 @@
-import { Entity , Column }  from "typeorm"
-import { User } from "./User.ts"
+import { ChildEntity, Column }  from "typeorm"
+import { User } from "./User.js"
 
-@Entity()
-
+@ChildEntity()
 // drivers class inherits from the User class
 export class Driver extends User {
-
-    // drivers vehicle details
-    @Column("json" , { nullable : true })
-    vehicleNumber: { vehicleId: string, vehicleModel: string, licensePlate: string, color : string };
 
     // drivers availability
     @Column()
@@ -20,7 +15,7 @@ export class Driver extends User {
 
     // drivers total earnings
     @Column("float", { default: 0 })
-    totalEarnings: string[];
+    totalEarnings: number;
 
     // drivers ride history
     @Column("json", { nullable : true })

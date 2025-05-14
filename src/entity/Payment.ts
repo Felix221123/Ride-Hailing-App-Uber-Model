@@ -1,6 +1,6 @@
 import { Entity , Column, PrimaryGeneratedColumn,ManyToOne, JoinColumn,CreateDateColumn  }   from "typeorm"
-import { User } from "./User.ts"
-import { Ride } from "./Ride.ts"
+import { User } from "./User.js"
+import { Ride } from "./Ride.js"
 
 
 

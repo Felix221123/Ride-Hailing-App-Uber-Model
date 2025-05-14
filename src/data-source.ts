@@ -1,13 +1,13 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
-import config from "./config/config.ts"
-import { User } from "./entity/User.ts"
-import { Admin } from "./entity/Admin.ts"
-import { Driver } from "./entity/Driver.ts"
-import { Customer } from "./entity/Customer.ts"
-import { Ride } from "./entity/Ride.ts"
-import { Payment } from "./entity/Payment.ts"
-import { Vehicle } from "./entity/Vehicle.ts"
+import config from "./config/config.js"
+import { User } from "./entity/User.js"
+import { Admin } from "./entity/Admin.js"
+import { Driver } from "./entity/Driver.js"
+import { Customer } from "./entity/Customer.js"
+import { Ride } from "./entity/Ride.js"
+import { Payment } from "./entity/Payment.js"
+import { Vehicle } from "./entity/Vehicle.js"
 
 
 

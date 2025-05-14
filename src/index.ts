@@ -1,9 +1,9 @@
 import 'dotenv/config'
 import express from "express"
 import { Request, Response, NextFunction } from "express"
-import { AppDataSource } from "./data-source.ts"
-import { Routes } from "./routes.ts"
-import config from './config/config.ts'
+import { AppDataSource } from "./data-source.js"
+import { Routes } from "./routes.js"
+import config from './config/config.js'
 
 AppDataSource.initialize().then(async () => {
 

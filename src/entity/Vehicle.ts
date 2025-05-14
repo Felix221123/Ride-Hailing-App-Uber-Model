@@ -1,5 +1,5 @@
 import { Entity, Column,PrimaryGeneratedColumn, ManyToOne, JoinColumn  }  from "typeorm"
-import { Driver } from "./Driver.ts"
+import { Driver } from "./Driver.js"
 
 @Entity()
 

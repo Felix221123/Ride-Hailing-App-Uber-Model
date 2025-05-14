@@ -28,3 +28,8 @@
 ```bash
    npx typeorm-ts-node-esm migration:generate -d ./src/data-source.ts src/migration/<migrationName>
    ```
+
+   and then run the command afterwards
+```bash
+   npx typeorm-ts-node-esm migration:run -d ./src/data-source.ts
+   ```
