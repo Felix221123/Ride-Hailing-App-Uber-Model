@@ -7,4 +7,5 @@ export default cleanEnv(process.env, {
     DB_HOST: str(),
     DB_PORT: num(),
     DB_DATABASE: str(),
+    GOOGLE_MAPS_API_KEY: str()
 })

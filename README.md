@@ -9,6 +9,6 @@
    - TypeORM 
    - PostgreSQL (database)
    - Typescript
-   - Socket IO
+   - Google Maps (Distance Matrix API) 
 
 

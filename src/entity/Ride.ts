@@ -18,7 +18,7 @@ export class Ride {
     customer: User;
 
     // foreign key for driver id
-    @ManyToOne(() => Driver, { nullable: false })
+    @ManyToOne(() => Driver, { nullable: true })
     @JoinColumn({ name: "driverId" })
     driver!: Driver;
 
