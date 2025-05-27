@@ -40,7 +40,7 @@ AppDataSource.initialize().then(async () => {
     // ...
 
     // defining the port
-    const port = config.server.port
+    const port = config.server.port || 5500
 
     // using the listen callback func to log out port definition
     app.listen(port, () => {
