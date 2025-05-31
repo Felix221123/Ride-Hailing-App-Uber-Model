@@ -33,3 +33,12 @@
 ```bash
    npx typeorm-ts-node-esm migration:run -d ./src/data-source.ts
    ```
+
+
+
+# Deploying NODEJS Web App With PostgreSQL
+   Make sure to replace your db credentials in your env with the ones provided by your deployment site (eg.render)
+
+   If your source directory folder is src, make sure to set it in your configuration in your deployment site
+
+   

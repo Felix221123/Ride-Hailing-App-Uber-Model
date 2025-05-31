@@ -24,6 +24,9 @@ export const AppDataSource = new DataSource({
     entities: [User , Admin , Driver , Customer , Ride , Payment , Vehicle],
     migrations: ["src/migration/**/*.ts"],
     subscribers: [],
+    ssl: {
+        rejectUnauthorized: false, 
+    },
 });
 
 
