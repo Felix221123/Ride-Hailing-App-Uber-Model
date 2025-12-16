@@ -29,6 +29,11 @@
    npx typeorm-ts-node-esm migration:generate -d ./src/data-source.ts src/migration/<migrationName>
    ```
 
+   if you are updating the existing migrations for your application, and it recreates the table again, use the cmd to create an empty migration file and write your safe migration in it, 
+```bash
+   npx typeorm-ts-node-esm migration:create ./src/packages/database/migrations/<migrationName>  
+   ```
+
    and then run the command afterwards
 ```bash
    npx typeorm-ts-node-esm migration:run -d ./src/data-source.ts
